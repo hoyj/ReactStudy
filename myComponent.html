@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- 앱이 랜더링 되는 위치 -->
+    </div>
+    <script src="static/ext/react.min.js"></script>
+    <script src="static/ext/react-dom.min.js"></script>
+    <script>
+      var Component = React.createClass({
+        propTypes: {
+          name: React.PropTypes.string.isRequired,
+        },
+        render: function() {
+          return React.DOM.span(null, `${this.props.name} I'm so custom`);
+        }
+      });
+      ReactDOM.render(
+        React.createElement(Component, {
+          name: "Bob",
+        }),
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
